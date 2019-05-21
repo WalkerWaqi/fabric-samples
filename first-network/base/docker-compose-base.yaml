@@ -110,5 +110,5 @@ services:
         - ../crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls:/etc/hyperledger/fabric/tls
         - peer1.org2.example.com:/var/hyperledger/production
     ports:
-      - 10051:7051
-      - 10053:7053
+      - 6051:7051
+      - 6053:7053
