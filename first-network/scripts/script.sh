@@ -22,10 +22,10 @@ COUNTER=1
 MAX_RETRY=5
 ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
-CC_SRC_PATH="github.com/chaincode/chaincode_example02/go/"
-if [ "$LANGUAGE" = "node" ]; then
-	CC_SRC_PATH="/opt/gopath/src/github.com/chaincode/chaincode_example02/node/"
-fi
+CC_SRC_PATH="github.com/chaincode/mytest/go/"
+# if [ "$LANGUAGE" = "node" ]; then
+# 	CC_SRC_PATH="/opt/gopath/src/github.com/chaincode/chaincode_example02/node/"
+# fi
 
 echo "Channel name : "$CHANNEL_NAME
 
@@ -93,7 +93,11 @@ chaincodeQuery 0 1 100
 
 # Invoke chaincode on peer0.org1
 echo "Sending invoke transaction on peer0.org1..."
-chaincodeInvoke 0 1
+chaincodeInvoke 0 1 hello
+
+# Query chaincode on peer0.org1
+echo "Querying chaincode on peer0.org1..."
+chaincodeQuery 0 1 hello
 
 ## Install chaincode on peer1.org2
 echo "Installing chaincode on peer1.org2..."
@@ -101,7 +105,7 @@ installChaincode 1 2
 
 # Query on chaincode on peer1.org2, check if the result is 90
 echo "Querying chaincode on peer1.org2..."
-chaincodeQuery 1 2 90
+chaincodeQuery 1 2 hello
 
 echo
 echo "========= All GOOD, BYFN execution completed =========== "
