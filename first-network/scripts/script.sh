@@ -66,6 +66,7 @@ joinChannel () {
 ## Create channel
 echo "Creating channel..."
 createChannel
+cp mychannel.block channel-artifacts
 
 ## Join all the peers to the channel
 echo "Having all peers join the channel..."
