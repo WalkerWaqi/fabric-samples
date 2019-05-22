@@ -114,7 +114,10 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
-    volumes:
-        - /etc/hosts:/etc/hosts
     depends_on:
       - couchdb3
+    extra_hosts:
+      orderer.example.com: 139.159.204.214
+      peer0.org1.example.com: 139.159.204.214
+      peer1.org1.example.com: 139.159.204.214
+      peer0.org2.example.com: 139.159.204.214
