@@ -43,7 +43,7 @@ setGlobals () {
 		if [ $PEER -eq 0 ]; then
 			CORE_PEER_ADDRESS=peer0.org2.example.com:7051
 		else
-			CORE_PEER_ADDRESS=peer1.org2.example.com:6051
+			CORE_PEER_ADDRESS=peer1.org2.example.com:7051
 		fi
 
 	elif [ $ORG -eq 3 ] ; then
