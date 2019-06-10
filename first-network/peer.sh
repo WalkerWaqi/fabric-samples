@@ -13,14 +13,14 @@ export FABRIC_CFG_PATH=$SCRIPT_PATH/sampleconfig
 setGlobals () {
     ORDERADDRESS="orderer.example.com:7050"
     ORDERER_CA="$SCRIPT_PATH/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem"
-    CORE_PEER_TLS_ROOTCERT_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt
-	CORE_PEER_TLS_KEY_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/server.key
-	CORE_PEER_LOCALMSPID=Org2MSP
-	CORE_PEER_TLS_CERT_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/server.crt
+    CORE_PEER_TLS_ROOTCERT_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+	CORE_PEER_TLS_KEY_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.key
+	CORE_PEER_LOCALMSPID=Org1MSP
+	CORE_PEER_TLS_CERT_FILE=$SCRIPT_PATH/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.crt
 	CORE_PEER_TLS_ENABLED=true
-	CORE_PEER_MSPCONFIGPATH=$SCRIPT_PATH/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+	CORE_PEER_MSPCONFIGPATH=$SCRIPT_PATH/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
 	CORE_LOGGING_LEVEL=DEBUG
-	CORE_PEER_ADDRESS=peer1.org2.example.com:5051
+	CORE_PEER_ADDRESS=peer0.org1.example.com:7051
 
     export ORDERADDRESS
     export ORDERER_CA
